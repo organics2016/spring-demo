@@ -1,0 +1,16 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 20
+      connection-test-query: 'SELECT 1'
+
+    initialization-mode: always
+    schema: classpath:db/schema-mysql.sql
+    data: classpath:db/data-mysql.sql
+    url: jdbc:mysql://192.168.0.99:3306/mp?autoReconnect=true&failOverReadOnly=false&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+
