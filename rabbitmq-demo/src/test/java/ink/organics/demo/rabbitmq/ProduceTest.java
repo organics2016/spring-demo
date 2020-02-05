@@ -26,7 +26,16 @@ public class ProduceTest {
         Map<String, Object> map = new HashMap<>();
         map.put("name", "ffff");
         map.put("age", 555);
-        produce.send(map, 2000);
+        produce.send(map, 10000);
         System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+    }
+
+    @Test
+    public void test2() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", "aaaa");
+        for (int i = 0; i < 1000; i++) {
+            produce.send2(map);
+        }
     }
 }

@@ -35,6 +35,18 @@ public class Produce {
 
         message.getMessageProperties().setDelay(delay);
 
-        rabbitTemplate.convertAndSend("test_delayed", "test_routing_key", message);
+        rabbitTemplate.convertAndSend("test_delayed", "test_delayed_routing_key", message);
+    }
+
+    public void send2(Object pojo) {
+
+        Message message = MessageBuilder.withBody(JSON.toJSONBytes(pojo))
+                .setContentType(MessageProperties.CONTENT_TYPE_JSON)
+                .setDeliveryMode(MessageDeliveryMode.PERSISTENT)
+                .setContentEncoding(StandardCharsets.UTF_8.name())
+                .setMessageId(UUID.randomUUID().toString())
+                .build();
+
+        rabbitTemplate.convertAndSend("test_test", "test3_routing_key", message);
     }
 }

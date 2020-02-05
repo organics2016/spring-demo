@@ -76,9 +76,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <skipTests>true</skipTests>
-<!--                    <systemPropertyVariables>-->
-<!--                        <spring.profiles.active>test</spring.profiles.active>-->
-<!--                    </systemPropertyVariables>-->
+                    <systemPropertyVariables>
+                        <spring.profiles.active>test</spring.profiles.active>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
 
