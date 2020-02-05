@@ -1,4 +1,4 @@
-package ink.organics.mp;
+package ink.organics.demo.mybatis;
 
 import ink.organics.demo.mybatis.model.entity.User;
 import ink.organics.demo.mybatis.model.service.UserService;
