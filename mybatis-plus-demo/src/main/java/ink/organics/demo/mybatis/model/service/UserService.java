@@ -1,7 +1,7 @@
-package ink.organics.mp.model.service;
+package ink.organics.demo.mybatis.model.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import ink.organics.mp.model.entity.User;
+import ink.organics.demo.mybatis.model.entity.User;
 
 
 public interface UserService extends IService<User> {

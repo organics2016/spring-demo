@@ -1,9 +1,10 @@
-package ink.organics.mp.model.service.impl;
+package ink.organics.demo.mybatis.model.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import ink.organics.mp.model.entity.User;
-import ink.organics.mp.model.mapper.UserMapper;
-import ink.organics.mp.model.service.UserService;
+
+import ink.organics.demo.mybatis.model.entity.User;
+import ink.organics.demo.mybatis.model.mapper.UserMapper;
+import ink.organics.demo.mybatis.model.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

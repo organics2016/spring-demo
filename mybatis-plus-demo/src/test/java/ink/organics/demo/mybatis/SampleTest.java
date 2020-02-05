@@ -1,7 +1,7 @@
 package ink.organics.mp;
 
-import ink.organics.mp.model.entity.User;
-import ink.organics.mp.model.service.UserService;
+import ink.organics.demo.mybatis.model.entity.User;
+import ink.organics.demo.mybatis.model.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

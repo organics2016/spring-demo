@@ -10,7 +10,7 @@ spring:
     initialization-mode: always
     schema: classpath:db/schema-mysql.sql
     data: classpath:db/data-mysql.sql
-    url: jdbc:mysql://192.168.0.99:3306/mp?autoReconnect=true&failOverReadOnly=false&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://192.168.56.99:3306/mp?autoReconnect=true&failOverReadOnly=false&useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: 123456
 
