@@ -1,7 +1,8 @@
 package ink.organics.demo.eureka.feign.client;
 
 import com.alibaba.fastjson.JSONObject;
-import ink.organics.demo.eureka.feign.client.api.EurekaFeignServer;
+import ink.organics.demo.eureka.feign.client.api.EurekaFeignServerApi;
+import ink.organics.demo.eureka.feign.client.dto.EurekaFeignServerDTO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,14 +17,43 @@ public class EurekaFeignClientTest {
 
 
     @Resource
-    private EurekaFeignServer eurekaFeignServer;
+    private EurekaFeignServerApi eurekaFeignServerApi;
 
 
     @Test
     public void test1() {
-        ResponseEntity<JSONObject> entity = eurekaFeignServer.test1();
+        ResponseEntity<JSONObject> entity = eurekaFeignServerApi.test1();
         System.out.println(entity);
-        System.out.println(entity.getBody());
     }
 
+    @Test
+    public void test2() {
+        ResponseEntity<String> entity = eurekaFeignServerApi.test2();
+        System.out.println(entity);
+    }
+
+    @Test
+    public void test3() {
+        ResponseEntity<EurekaFeignServerDTO> entity = eurekaFeignServerApi.test3();
+        System.out.println(entity);
+    }
+
+    @Test
+    public void test4() {
+        JSONObject entity = eurekaFeignServerApi.test4();
+        System.out.println(entity);
+    }
+
+
+    @Test
+    public void test5() {
+        String entity = eurekaFeignServerApi.test5();
+        System.out.println(entity);
+    }
+
+    @Test
+    public void test6() {
+        EurekaFeignServerDTO entity = eurekaFeignServerApi.test6();
+        System.out.println(entity);
+    }
 }

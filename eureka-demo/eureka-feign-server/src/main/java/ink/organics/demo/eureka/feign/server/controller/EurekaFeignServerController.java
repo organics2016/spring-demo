@@ -23,4 +23,30 @@ public class EurekaFeignServerController {
 
         return new ResponseEntity<>(json, HttpStatus.OK);
     }
+
+    @GetMapping("/test2")
+    public ResponseEntity test2() {
+        return this.test1();
+    }
+
+    @GetMapping("/test3")
+    public ResponseEntity test3() {
+        return this.test1();
+    }
+
+    @GetMapping("/test4")
+    public ResponseEntity test4() {
+        return this.test1();
+    }
+
+    @GetMapping("/test5")
+    public ResponseEntity test5() {
+        return this.test1();
+    }
+
+    @GetMapping("/test6")
+    public ResponseEntity test6() {
+        return this.test1();
+    }
+
 }
