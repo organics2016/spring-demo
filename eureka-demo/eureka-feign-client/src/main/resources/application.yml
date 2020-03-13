@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: EurekaFeignClient
+
+server:
+  port: 7112

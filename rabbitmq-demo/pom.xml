@@ -18,9 +18,4 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
     </dependencies>
-
-    <build>
-        <finalName>${project.artifactId}-${project.version}-${git.commit.id.abbrev}</finalName>
-    </build>
-
 </project>
