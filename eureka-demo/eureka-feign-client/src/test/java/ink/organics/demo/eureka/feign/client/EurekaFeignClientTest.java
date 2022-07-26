@@ -3,15 +3,12 @@ package ink.organics.demo.eureka.feign.client;
 import com.alibaba.fastjson.JSONObject;
 import ink.organics.demo.eureka.feign.client.api.EurekaFeignServerApi;
 import ink.organics.demo.eureka.feign.client.dto.EurekaFeignServerDTO;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class EurekaFeignClientTest {
 
