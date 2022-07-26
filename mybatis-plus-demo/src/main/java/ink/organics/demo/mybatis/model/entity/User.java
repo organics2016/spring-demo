@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class User {
 
-    @TableId(type = IdType.UUID)
+    @TableId(type = IdType.ASSIGN_UUID)
     private String id;
     private String name;
     private Integer age;

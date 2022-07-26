@@ -2,15 +2,15 @@ package ink.organics.demo.mybatis;
 
 import ink.organics.demo.mybatis.model.entity.User;
 import ink.organics.demo.mybatis.model.service.UserService;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-@RunWith(SpringRunner.class)
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
 @SpringBootTest
 public class SampleTest {
 
@@ -19,16 +19,20 @@ public class SampleTest {
     private UserService userService;
 
     @Test
-    public void testSelect() {
-        System.out.println(("----- selectAll method test ------"));
+    public void rollbackTest1() {
+        System.out.println(("----- rollbackTest1 method test ------"));
         List<User> users = userService.list();
-
-        userService.saveBatch(users);
+        assertThatExceptionOfType(RuntimeException.class).isThrownBy(() -> {
+            userService.saveBatch(users, true);
+        });
+        assertThat(userService.list().size()).isEqualTo(5);
     }
 
     @Test
-    public void test2() {
-
-
+    public void rollbackTest2() {
+        System.out.println(("----- rollbackTest2 method test ------"));
+        List<User> users = userService.list();
+        assertThat(userService.saveBatch(users, false)).isTrue();
+        assertThat(userService.list().size()).isEqualTo(10);
     }
 }
