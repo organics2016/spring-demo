@@ -13,6 +13,7 @@
         <module>mybatis-plus-demo</module>
         <module>rabbitmq-demo</module>
         <module>eureka-demo</module>
+        <module>jpa-demo</module>
     </modules>
 
     <properties>
@@ -64,6 +65,14 @@
                 <version>2021.0.3</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-bom</artifactId>
+                <version>2021.2.2</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,0 +1,32 @@
+# DataSource Config
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 20
+      connection-test-query: 'SELECT 1'
+    url: jdbc:mysql://127.0.0.1:3306/jpa?autoReconnect=true&failOverReadOnly=false&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+
+#  sql:
+#    init:
+#      mode: always
+#      schema-locations:
+#        - classpath:db/schema-mysql.sql
+#      data-locations:
+#        - classpath:db/data-mysql.sql
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    root: info
+    org.springframework.web: debug
+  file:
+    name: log/boot.log
