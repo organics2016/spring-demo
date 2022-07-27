@@ -1,11 +1,13 @@
 package ink.organics.demo.jpa.model.service;
 
 
+import ink.organics.demo.jpa.exception.OperationException;
 import ink.organics.demo.jpa.model.entity.User;
 import ink.organics.demo.jpa.model.repository.UserRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -29,9 +31,14 @@ public class UserService {
         userRepository.saveAllAndFlush(users);
 
         if (rollback) {
-            throw new RuntimeException("rollback");
+            throw new OperationException("rollback");
         }
 
         return true;
+    }
+
+    @Transactional(propagation = Propagation.NOT_SUPPORTED)
+    public List<User> all() {
+        return userRepository.findAll();
     }
 }
